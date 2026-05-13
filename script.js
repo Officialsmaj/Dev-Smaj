@@ -469,7 +469,6 @@ function initHeroAnimations() {
             targets: profileImage,
             opacity: [0, 1],
             scale: [0.8, 1],
-            rotate: [180, 0],
             delay: 1000,
             duration: 1500,
             easing: 'easeOutElastic(1, .8)'
@@ -479,7 +478,6 @@ function initHeroAnimations() {
             anime({
                 targets: profileImage,
                 scale: [1, 1.1],
-                rotate: [0, 5],
                 duration: 500,
                 easing: 'easeOutElastic(1, .8)'
             });
@@ -489,7 +487,6 @@ function initHeroAnimations() {
             anime({
                 targets: profileImage,
                 scale: [1.1, 1],
-                rotate: [5, 0],
                 duration: 500,
                 easing: 'easeOutElastic(1, .8)'
             });
@@ -680,21 +677,11 @@ function initContactAnimations() {
 }
 
 function initParallax() {
-    const profileImage = document.getElementById('profileImage');
-    if (!profileImage) return;
-    
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 const scrolled = window.pageYOffset;
-                const parallaxSpeed = 0.3;
-                const maxOffset = 100;
-                const offset = Math.min(scrolled * parallaxSpeed, maxOffset);
-                
-                if (profileImage) {
-                    profileImage.style.transform = `translateY(${offset}px)`;
-                }
                 
                 const gridBg = document.querySelector('.code-grid-bg');
                 if (gridBg) {
