@@ -18,6 +18,7 @@ function initializeApp() {
     initScrollEffects();
     initFormHandlers();
     initMobileMenu();
+    initProjectCarousel();
     updateLanguageUI();
     updateThemeUI();
     AppState.isLoaded = true;
@@ -276,6 +277,29 @@ function toggleMobileMenu() {
     if (menuToggle) {
         menuToggle.classList.toggle('active', AppState.isMenuOpen);
     }
+}
+
+function initProjectCarousel() {
+    const projectsGrid = document.getElementById('projectsGrid');
+    const prevButton = document.getElementById('projectsPrev');
+    const nextButton = document.getElementById('projectsNext');
+    if (!projectsGrid || !prevButton || !nextButton) return;
+
+    const getScrollAmount = () => {
+        const firstCard = projectsGrid.querySelector('.project-card');
+        if (!firstCard) return projectsGrid.clientWidth;
+        const gridStyles = window.getComputedStyle(projectsGrid);
+        const gap = parseFloat(gridStyles.columnGap || gridStyles.gap || 0);
+        return firstCard.offsetWidth + gap;
+    };
+
+    prevButton.addEventListener('click', () => {
+        projectsGrid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextButton.addEventListener('click', () => {
+        projectsGrid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
 }
 
 function generateParticles() {

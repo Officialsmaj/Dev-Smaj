@@ -170,6 +170,13 @@
               <i class="fas fa-envelope"></i>
             </a>
           </div>
+
+          <div class="scroll-indicator">
+            <div class="scroll-mouse">
+              <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text" data-text-en="Scroll Down" data-text-ar="انتقل للأسفل">Scroll Down</span>
+          </div>
         </div>
 
         <div class="hero-image-wrapper">
@@ -205,12 +212,6 @@
         </div>
       </div>
 
-      <div class="scroll-indicator">
-        <div class="scroll-mouse">
-          <div class="scroll-wheel"></div>
-        </div>
-        <span class="scroll-text" data-text-en="Scroll Down" data-text-ar="انتقل للأسفل">Scroll Down</span>
-      </div>
     </section>
 
     <!-- About Section -->
@@ -621,7 +622,12 @@
           <div class="section-line"></div>
         </div>
 
-        <div class="projects-grid">
+        <div class="projects-carousel">
+          <button class="projects-arrow projects-arrow-left" id="projectsPrev" type="button" aria-label="Previous projects">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="projects-grid" id="projectsGrid">
           <div class="project-card">
             <div class="project-image">
               <div class="project-overlay">
@@ -683,30 +689,69 @@
             <div class="project-image">
               <div class="project-overlay">
                 <div class="project-links">
-                  <a href="#" class="project-link" title="View Project">
+                  <a href="https://devsmaj.github.io/smaj-ecosystem-dashboard/" class="project-link" title="View Project" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-external-link-alt"></i>
                   </a>
-                  <a href="#" class="project-link" title="View Code">
+                  <a href="https://github.com/devsmaj/smaj-ecosystem-dashboard" class="project-link" title="View Code" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-preview-stack">
+                <img src="/assets/dashboard1.png" alt="SMAJ Ecosystem Dashboard overview" class="project-preview-image">
+                <img src="/assets/dashboard2.png" alt="SMAJ Ecosystem Dashboard analytics" class="project-preview-image">
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title" data-text-en="SMAJ Ecosystem Dashboard" data-text-ar="لوحة تحكم SMAJ Ecosystem">SMAJ Ecosystem Dashboard</h3>
+              <p class="project-description" data-text-en="A dynamic AI-powered dashboard for the SMAJ Ecosystem, bringing 13 services into one unified interface for the Pi Network community. It includes service navigation, AI assistant features, KYC-focused flows, financial analytics, responsive design, dark mode, and global-ready localization." data-text-ar="لوحة تحكم ديناميكية مدعومة بالذكاء الاصطناعي لمنظومة SMAJ، تجمع 13 خدمة في واجهة موحدة لمجتمع Pi Network. تتضمن تنقل الخدمات، ومزايا مساعد الذكاء الاصطناعي، وتدفقات KYC، وتحليلات مالية، وتصميما متجاوبا، ووضعا داكنا، ودعما عالميا للغات والعملات.">
+                A dynamic AI-powered dashboard for the SMAJ Ecosystem, bringing 13 services into one unified interface for the Pi Network community. It includes service navigation, AI assistant features, KYC-focused flows, financial analytics, responsive design, dark mode, and global-ready localization.
+              </p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">Gemini AI</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">Boxicons</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#home" class="project-link" title="View Project">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                  <a href="https://github.com/devsmaj/devsmaj" class="project-link" title="View Code" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i>
                   </a>
                 </div>
               </div>
               <div class="project-placeholder">
-                <i class="fas fa-blog"></i>
+                <i class="fas fa-user-code"></i>
               </div>
             </div>
             <div class="project-content">
-              <h3 class="project-title" data-text-en="Blog Platform" data-text-ar="منصة المدونة">Blog Platform</h3>
-              <p class="project-description" data-text-en="A modern blog platform with CMS features and beautiful UI design." data-text-ar="منصة مدونة حديثة مع ميزات CMS وتصميم واجهة مستخدم جميل.">
-                A modern blog platform with CMS features and beautiful UI design.
+              <h3 class="project-title" data-text-en="Dev Smaj Portfolio" data-text-ar="بورتفوليو Dev Smaj">Dev Smaj Portfolio</h3>
+              <p class="project-description" data-text-en="A responsive personal portfolio website built to present skills, experience, projects, and contact information with bilingual support, theme switching, smooth animations, and a clean developer-focused interface." data-text-ar="موقع بورتفوليو شخصي متجاوب لعرض المهارات والخبرة والمشاريع ومعلومات التواصل، مع دعم لغتين، وتبديل الثيم، وحركات سلسة، وواجهة نظيفة موجهة للمطورين.">
+                A responsive personal portfolio website built to present skills, experience, projects, and contact information with bilingual support, theme switching, smooth animations, and a clean developer-focused interface.
               </p>
               <div class="project-tags">
-                <span class="tag">Next.js</span>
-                <span class="tag">Prisma</span>
-                <span class="tag">PostgreSQL</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive UI</span>
               </div>
             </div>
           </div>
+
+          </div>
+
+          <button class="projects-arrow projects-arrow-right" id="projectsNext" type="button" aria-label="Next projects">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
