@@ -227,12 +227,21 @@ function handleFormSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
-    console.log('Form submitted:', data);
+    const recipient = 'officialsmaj@gmail.com';
+    const subject = data.subject || 'Portfolio contact message';
+    const body = [
+        `Name: ${data.name || ''}`,
+        `Email: ${data.email || ''}`,
+        '',
+        data.message || ''
+    ].join('\n');
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
     const message = AppState.currentLang === 'ar' 
-        ? 'تم إرسال الرسالة بنجاح!' 
-        : 'Message sent successfully!';
+        ? 'سيتم فتح تطبيق البريد لإرسال رسالتك.' 
+        : 'Your email app will open to send the message.';
     
+    window.location.href = mailtoUrl;
     alert(message);
     e.target.reset();
 }
